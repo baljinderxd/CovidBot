@@ -237,3 +237,8 @@ bot.on('location', (msg) => {
     return true;
   });
 });
+
+// Main function which recieves the callback and deletes the graph image
+bot.on('callback_query', (callbackQuery) => {
+  bot.deleteMessage(callbackQuery.message.chat.id, callbackQuery.message.message_id);
+});
